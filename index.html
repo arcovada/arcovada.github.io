@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcovada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000;
+            --text: #f2f2f2;
+            --glow: rgba(255, 255, 255, 0.09);
+        }
 
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .main {
+            min-height: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding: clamp(2rem, 7vh, 4.5rem) 1.5rem 4rem;
+            background: radial-gradient(
+                ellipse 60% 45% at 50% 22%,
+                var(--glow),
+                transparent 70%
+            );
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+            animation: rise 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        .brand img {
+            display: block;
+            width: min(500px, 78vw);
+            height: auto;
+        }
+
+        .wordmark {
+            margin: 0;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 200;
+            letter-spacing: 0.32em;
+        }
+
+        .about {
+            margin: 0;
+            max-width: 90ch;
+            font-size: clamp(1rem, 2.2vw, 1.125rem);
+            font-weight: 300;
+            line-height: 1.75;
+            color: rgba(242, 242, 242, 0.72);
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .brand {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="main">
+        <div class="brand">
+            <img src="resc/arcovada.png" alt="Arcovada logo">
+            <h1 class="wordmark">Arcovada</h1>
+            <span>Building a new generation of Processing Units</span>
+            <p class="about">
+                An organization dedicated to designing and developing open calculus processing units (OCPUs) built around performance, innovation, and hardware freedom. Our goal is to create powerful, accessible, and customizable hardware that puts control back into the hands of its owners.
+                We believe OCPUs should be built to unleash their full potential, without unnecessary restrictions or artificial limitations.
+            </p>
+        </div>
+    </main>
+</body>
+</html>
